@@ -1,0 +1,14 @@
+[gd_resource type="GDNativeLibrary" format=2]
+
+[resource]
+
+config_file = Object(ConfigFile,"script":null)
+
+load_once = true
+symbol_prefix = "godot_"
+reloadable = true
+entry/Windows.64 = "res://webrtc/lib/libwebrtc_native.windows.64.dll"
+entry/X11.64 = "res://webrtc/lib/libwebrtc_native.linux.64.so"
+dependency/Windows.64 = [  ]
+dependency/X11.64 = [  ]
+
