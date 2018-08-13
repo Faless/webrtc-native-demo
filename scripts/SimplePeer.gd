@@ -18,7 +18,6 @@ func _ready():
 func new_ice_candidate(mid_name, index_name, sdp_name):
 	_log("Candidate")
 	_log(sdp_name)
-	$AcceptDialog.candidates.append(sdp_name)
 	if automate:
 		LocalServer.new_candidate(get_path(), mid_name, index_name, sdp_name)
 
@@ -33,7 +32,6 @@ func offer_created(type, offer):
 	_log(type)
 	_log(offer)
 	peer.set_local_description(type, offer)
-	$AcceptDialog.offer = offer
 	if automate:
 		LocalServer.new_offer(get_path(), type, offer)
 
