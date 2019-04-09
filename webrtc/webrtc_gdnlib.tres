@@ -3,7 +3,7 @@
 [resource]
 config_file = Object(ConfigFile,"script":null)
 
-entry/Windows.64 = "res://webrtc/lib/libwebrtc_native.windows.64.dll"
-entry/X11.64 = "res://webrtc/lib/libwebrtc_native.linux.64.so"
+entry/Windows.64 = "res://webrtc/lib/webrtc_native.windows.release.64.dll"
+entry/X11.64 = "res://webrtc/lib/libwebrtc_native.linux.release.64.so"
 dependency/Windows.64 = [  ]
 dependency/X11.64 = [  ]
