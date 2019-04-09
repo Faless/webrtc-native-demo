@@ -1,11 +1,15 @@
 extends Node
 
-const NativeWebRTC = preload("res://webrtc/webrtc.gdns")
-var peer = NativeWebRTC.new()
-
+var peer = null
 var automate = true
 
 func _ready():
+	if OS.get_name() != 'HTML5':
+		# Native library
+		peer = load("res://webrtc/webrtc.gdns").new()
+	else:
+		# Javascript library
+		peer = WebRTCPeer.new()
 	LocalServer.register(get_path())
 	peer.connect("new_ice_candidate", self, "new_ice_candidate")
 	peer.connect("offer_created", self, "offer_created")
