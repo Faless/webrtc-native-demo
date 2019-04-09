@@ -2,10 +2,6 @@ extends Node
 
 var peers = []
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
 func register(path):
 	peers.append(path)
 
@@ -27,5 +23,3 @@ func new_offer(path, type, sdp):
 			print(type, sdp)
 			prints("To:", p)
 			get_node(p).peer.set_remote_description(type, sdp)
-		#else:
-		#	get_node(path).set_local_description(sdp, isOffer)

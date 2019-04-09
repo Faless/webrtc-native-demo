@@ -1,10 +1,5 @@
 extends Node
 
-
-# The commented line will be used instead,
-# and the script will be set as a project property
-# when everything is done and awesome
-#var peer = WebRTCPeer.new()
 const NativeWebRTC = preload("res://webrtc/webrtc.gdns")
 var peer = NativeWebRTC.new()
 
@@ -25,7 +20,7 @@ func _process(delta):
 	peer.poll()
 	if peer.get_available_packet_count() > 0:
 		_log("Count:" + str(peer.get_available_packet_count()))
-		_log(peer.get_packet().get_string_from_utf8())
+		$HBoxContainer/Logs/Msg.text += peer.get_packet().get_string_from_utf8() + "\n"
 
 func offer_created(type, offer):
 	_log("Offer")
@@ -36,6 +31,7 @@ func offer_created(type, offer):
 		LocalServer.new_offer(get_path(), type, offer)
 
 func _log(msg):
+	print(msg)
 	$HBoxContainer/Logs/Local.text += "%s\n" % str(msg)
 
 ###
@@ -54,12 +50,8 @@ func _on_SetRemoteAnswer_pressed():
 	_set_remote_desc("answer")
 
 func _on_Send_pressed():
-	print(peer.get_connection_state())
-	peer.put_packet($HBoxContainer/Offer/Send/LineEdit.text.to_utf8())
+	_log("Send msg result: %d" % peer.put_packet($HBoxContainer/Offer/Send/LineEdit.text.to_utf8()))
 	$HBoxContainer/Offer/Send/LineEdit.text = ""
-
-func meesage_received(msg, d0="", d1="", d2="", d3="", d4=""):
-	_log([msg, d0, d1, d2, d3, d4])
 
 func _on_IceCandidate_pressed():
 	var candidate = $HBoxContainer/Offer/IceCandidate/LineEdit.text
