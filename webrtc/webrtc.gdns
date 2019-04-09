@@ -3,9 +3,6 @@
 [ext_resource path="res://webrtc/webrtc_gdnlib.tres" type="GDNativeLibrary" id=1]
 
 [resource]
-
 resource_name = "WebRTCPeer"
-class_name = "WebRTCPeer"
+class_name = "WebRTCLibPeer"
 library = ExtResource( 1 )
-_sections_unfolded = [ "library" ]
-
