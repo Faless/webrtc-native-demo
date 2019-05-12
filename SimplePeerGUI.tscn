@@ -34,6 +34,12 @@ margin_bottom = 24.0
 pressed = true
 text = "Automate"
 
+[node name="Close" type="Button" parent="HBoxContainer/Offer/Buttons"]
+margin_left = 181.0
+margin_right = 228.0
+margin_bottom = 24.0
+text = "Close"
+
 [node name="TextEdit" type="TextEdit" parent="HBoxContainer/Offer"]
 margin_top = 28.0
 margin_right = 510.0
@@ -121,6 +127,7 @@ size_flags_vertical = 3
 readonly = true
 [connection signal="pressed" from="HBoxContainer/Offer/Buttons/Button" to="." method="_on_Button_pressed"]
 [connection signal="toggled" from="HBoxContainer/Offer/Buttons/Automate" to="." method="_on_Automate_toggled"]
+[connection signal="pressed" from="HBoxContainer/Offer/Buttons/Close" to="." method="_on_Close_pressed"]
 [connection signal="pressed" from="HBoxContainer/Offer/HBoxContainer/SetRemoteOffer" to="." method="_on_SetRemoteOffer_pressed"]
 [connection signal="pressed" from="HBoxContainer/Offer/HBoxContainer/SetRemoteAnswer" to="." method="_on_SetRemoteAnswer_pressed"]
 [connection signal="pressed" from="HBoxContainer/Offer/IceCandidate/IceCandidate" to="." method="_on_IceCandidate_pressed"]
