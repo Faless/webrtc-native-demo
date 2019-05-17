@@ -1,9 +1,0 @@
-[gd_resource type="GDNativeLibrary" format=2]
-
-[resource]
-singleton = true
-reloadable = false
-entry/Windows.64 = "res://webrtc/lib/webrtc_native.windows.release.64.dll"
-entry/X11.64 = "res://webrtc/lib/libwebrtc_native.linux.debug.64.so"
-dependency/Windows.64 = [  ]
-dependency/X11.64 = [  ]
