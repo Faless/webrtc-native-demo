@@ -25,8 +25,8 @@ LocalServer="*res://scripts/LocalServer.gd"
 
 [gdnative]
 
-singletons=[ "res://webrtc/webrtc.tres", "res://webrtc/webrtc_debug.tres" ]
-singletons_disabled=[ "res://webrtc/webrtc_debug.tres" ]
+singletons=[ "res://webrtc/webrtc.tres", "res://webrtc_debug/webrtc_debug.tres" ]
+singletons_disabled=[ "res://webrtc/webrtc.tres" ]
 
 [input]
 
